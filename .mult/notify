@@ -1,4 +1,6 @@
 #!/bin/bash
+
 #Author: Cole Vahey, Jackson Martin
+
 rm -f .messagealert
 echo -e "\033[0;31mNEW MESSAGE" >> .messagealert

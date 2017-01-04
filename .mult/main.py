@@ -1,31 +1,33 @@
 #!/usr/bin/env python3
+
 #Authors: Jackson Martin, Cole Vahey
+
 import os
 import colors as c
 import time as t
 import user
-import load
 import shutil
+import getpass
 
 def run():
-    option=input(c.yellow+"Would you like to scan for new messages? or send a new message? (1), (2)"+c.reset+" >>>"+c.violet)
+    optioni = input(c.yellow + "Would you like to scan for new messages? or send a new message? (1), (2)\n" + c.reset + ">> " + c.violet)
     if option == '1':
         os.system('bash receive')
-        clean=input(c.yellow+'Would you like to delete their message? (Y/N)'+c.reset+' >>>'+c.violet).strip().lower()
+        clean = input(c.yellow + 'Would you like to delete their message? (Y/N)\n' + c.reset + '>> ' + c.violet).strip().lower()
         if clean == 'y':
             os.system('bash cleanup')
-            print(c.yellow+'Message deleted!')
+            print(c.yellow + 'Message deleted!')
         elif clean == 'n':
-            print(c.yellow+'Message saved!')
+            print(c.yellow + 'Message saved!')
         else:
-            print(c.yellow+'No answer provided. Message saved.')
+            print(c.yellow + 'No answer provided. Message saved.')
         input('[Press enter to continue]')
         print(c.clear)
         run()
     elif option == '2':
-        prompt = input(c.yellow+"What would you like to say?"+c.reset+" >>> "+c.violet)
+        prompt = input(c.yellow + "What would you like to say?\n" + c.reset + ">> " + c.violet)
         os.system('date >> .talk.txt')
-        os.system('echo '+user.User.name.title()+': '+prompt+' >> .talk.txt')
+        os.system('echo '+ getpass.getuser() + ': ' + prompt + ' >> .talk.txt')
         os.system('bash notify')
         input('Message sent! [Press enter]')
         print(c.clear)
@@ -37,8 +39,7 @@ def run():
 
 if __name__ == '__main__':
     print(c.clear)
-    print(c.yellow+"Chatting!")
-    load.load()
+    print(c.yellow + "Mult")
     while True:
         try:
             run()
