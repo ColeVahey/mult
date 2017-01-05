@@ -5,7 +5,7 @@
 import os
 
 def run():
-    os.system('bash rmold.sh')
+    os.system('sudo bash rmold.sh')
     os.system('rm rmold.sh')
     print('Copying .alert file...')
     os.system('cp .alert ~')
