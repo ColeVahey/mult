@@ -13,7 +13,7 @@ Mult is an Instant Message program for 2 users. For the sake of this
 installation, you will be `user1` and the person you chat with will 
 be called `user2`. First, open the /etc/group file as an admin. `vi
 /etc/group` Put `user1` and `user2` together. `user1:x:1000:user2` `user2:x:1001:user1`
-Next, go back to .mult and edit the `bh` file `vi bh`. Once you're 
+Next, go back to .mult and edit the `bashrcsetup` file `vi bashrcsetup`. Once you're 
 inside, edit the part that says `user2` to say their user name. 
 Next, edit the `receive` file to do the same thing. After that, 
 vi the 'cleanup' file to change the last user2 part to the user you 
