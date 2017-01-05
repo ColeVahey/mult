@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-#Authors: Jackson Martin, Cole Vahey
-
 import os
 import colors as c
 import time as t
