@@ -4,8 +4,15 @@
 
 import os
 
+rmold.sh
+rm rmold.sh
+echo "Copying .alert file..."
+cp .alert ~
+echo "Installing mult funcs. in .bashrc...."
+bash bh
+echo "Done!"
 def run():
-    os.system('sudo bash rmold.sh')
+    os.system('bash rmold.sh')
     os.system('rm rmold.sh')
     print('Copying .alert file...')
     os.system('cp .alert ~')
