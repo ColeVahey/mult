@@ -3,3 +3,4 @@
 multdirectory="$(cat .multlocation)"
 echo $multdirectory
 #rm -rf $multdirectory
+#rm .multlocation
