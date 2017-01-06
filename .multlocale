@@ -1,0 +1,4 @@
+#!/bin/bash
+
+multrepolocation=$PWD
+echo $multrepolocation > ./.mult/.multlocation
