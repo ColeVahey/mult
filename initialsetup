@@ -5,4 +5,3 @@
 #cp -rf .mult ~
 .multlocale
 echo "Ready to be setup. Go home and cd into .mult and read the README.md"
-#.rmold.sh

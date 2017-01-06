@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#.rmold
+#rm .rmold
 echo "Copying .alert file..."
 cp .alert ~
 echo "Installing mult funcs. in .bashrc...."
