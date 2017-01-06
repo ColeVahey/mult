@@ -3,12 +3,10 @@
 import os
 import colors as c
 import time as t
-import user
-import shutil
 import getpass
 
 def run():
-    optioni = input(c.yellow + "Would you like to scan for new messages? or send a new message? (1), (2)\n" + c.reset + ">> " + c.violet)
+    option = input(c.yellow + "Would you like to scan for new messages? or send a new message? (1), (2)\n" + c.reset + ">> " + c.violet)
     if option == '1':
         os.system('bash receive')
         clean = input(c.yellow + 'Would you like to delete their message? (Y/N)\n' + c.reset + '>> ' + c.violet).strip().lower()
