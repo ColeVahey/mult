@@ -1,7 +1,7 @@
 #!/bin/bash
 
 finder(){
-  cd /home/user2/.mult/
+  cd ~user2/.mult/
   cat .talk.txt
 }
 

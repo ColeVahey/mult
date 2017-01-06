@@ -1,5 +1,5 @@
 alert(){
-  cd /home/user2/.mult/
+  cd ~user2/.mult/
   cat .messagealert
 }
 alert

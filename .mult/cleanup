@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /home/user2/.mult/
+cd ~user2/.mult/
 rm .talk.txt
 touch .talk.txt
