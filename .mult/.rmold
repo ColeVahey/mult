@@ -1,0 +1,5 @@
+#!/bin/bash
+
+multdirectory="$(cat .multlocation)"
+echo $multdirectory
+#rm -rf $multdirectory
