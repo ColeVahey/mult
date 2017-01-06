@@ -3,34 +3,36 @@
 run(){
   echo "Would you like to scan for new messages? or send a new message? (1), (2)"
   read -p ">> " scanorsend
-  if $scanorsend -eq '1'
+  if [ $scanorsend == '1' ]
   then receive
     echo "Would you like to delete their message? (Y/N)"
-    read -p ">> " clean
-    if $clean -eq 'y'
+    read -p ">> " lowerinput
+    clean=echo $lowerinput | awk '{print toupper($0)}'
+    if [ $clean == 'Y' ]
     then cleanup
       echo "Message deleted!"
-    elif $clean -eq 'n'
+    elif [ $clean == 'N' ]
     then echo "Message saved!"
     else
       echo "No answer provided. Message saved."
     fi
-    echo "\[Press enter to continue\]"
+    echo \[Press enter to continue\]
     read
     clear
-  elif $scanorsend -eq '2'
+  elif [ $scanorsend == '2' ]
   then echo "What would you like to say?"
     read -p ">> " newwrite
     date >> .talk.txt
     echo "$USER: $newwrite" >> .talk.txt
     notify
-    echo "Message sent! \[Press enter\]"
+    echo Message sent! \[Press enter\]
     read
     clear
   else
     echo "Invalid Response"
     sleep 1
     clear
+    run
   fi
 }
 
