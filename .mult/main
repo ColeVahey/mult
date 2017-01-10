@@ -33,6 +33,7 @@ run(){
     clear
     run
   fi
+  run
 }
 
 run  
