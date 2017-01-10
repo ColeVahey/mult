@@ -11,6 +11,6 @@ echo 'rmnotify(){
 rmnotify
 mult(){
   cd ~/.mult/
-  python3 main.py
+  main
   cd ~
 }' >> .bashrc

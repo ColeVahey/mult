@@ -6,12 +6,11 @@ run(){
   if [ $scanorsend == '1' ]
   then receive
     echo "Would you like to delete their message? (Y/N)"
-    read -p ">> " lowerinput
-    clean=echo $lowerinput | awk '{print toupper($0)}'
-    if [ $clean == 'Y' ]
+    read -p ">> " clean 
+    if [ $clean == 'Y' -o $clean == 'y' ]
     then cleanup
       echo "Message deleted!"
-    elif [ $clean == 'N' ]
+    elif [ $clean == 'N' -o $clean == 'n' ]
     then echo "Message saved!"
     else
       echo "No answer provided. Message saved."
