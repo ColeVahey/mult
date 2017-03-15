@@ -1,7 +1,0 @@
-TODO: Fix this error
-
-
-NEW MESSAGE
-override rw-r--r--  user/staff for .messagealert? yes
-rm: .messagealert: Permission denied
-touch: .messagealert: Permission denied
