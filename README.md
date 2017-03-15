@@ -1,11 +1,11 @@
 ![Mult Logo](docs/multlogo.png "Mult")
-  #Mult
-Mult is an Instant Message program written in python and bash. It
+  
+# Mult
+Mult is an Instant Message program written in bash. It
 takes a bit of setup, but works fine.                                          
 
 # Requirements.
-Mult runs on Mac(OSX) and Linux. Make sure you have Python3 installed
-on your system. A text editor like Vim or Nano will be needed for the install.
+Mult runs on Mac(OSX) and Linux. A text editor like Vim or Nano will be needed for the install.
 You also need to be on a system with multiple users for this to have any
 use.
 
@@ -18,7 +18,7 @@ Next, go back to .mult and edit the `bashrcsetup` file `vi bashrcsetup`. Once yo
 inside, edit the part that says `user2` to say their user name. 
 Next, edit the `receive` file to do the same thing. After that, 
 vi the 'cleanup' file to change the last user2 part to the user you 
-will be communicating with. Then, run the `setup.py` file. `python3 setup.py` 
+will be communicating with. Then, run the `setup.py` file. `bash setup` 
 Once this is done, go back to your home directory. `cd ~` and edit the `.alert` 
 file so you can change the final `user2` part. After this, source your
 .bashrc file, `source .bashrc`. Once these steps are done for both users, you're set! 
