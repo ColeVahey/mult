@@ -38,30 +38,28 @@ then
   echo "rmnotify(){
     bash ~/.alert
     cd ~$user2/.mult/
-    rm .messagealert
-    touch .messagealert
+    echo \"\" > .messagealert
     cd ~
   }
   rmnotify
-  mult(){
+mult(){
     cd ~/.mult/
     bash main
     cd ~
-  }" >> ~/.bashrc
+}" >> ~/.bashrc
 else
   echo "rmnotify(){
-    bash .alert
+    bash ~/.alert
     cd ~$user2/.mult/
-    rm .messagealert
-    touch .messagealert
+    echo \"\" > .messagealert
     cd ~
   }
   rmnotify
-  mult(){
+mult(){
     cd ~/.mult/
-    main
+    bash main
     cd ~
-  }" > ~/.bashrc
+}" > ~/.bashrc
 fi
 
 #Copy needed files to the user's home directory and set read/write access to all
