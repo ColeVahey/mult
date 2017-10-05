@@ -1,4 +1,0 @@
-#!/bin/bash
-
-rm -f .messagealert
-echo -e "\033[0;31mNEW MESSAGE" >> .messagealert

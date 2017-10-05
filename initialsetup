@@ -1,7 +1,77 @@
 #!/bin/bash
 
-#When you delete the .rmold.sh comment, the program will delete the whole mult directory.
+#Save the location of the installer to be deleted
+oldmultlocation=$PWD
 
-.multlocale
-#cp -rf .mult ~
-echo "Ready to be setup. Go home and cd into .mult and read the README.md"
+#Receive the second user on the system
+echo "Who is the second user in your IM system?"
+read -p ">> " user2
+
+if [ -d /Users/$user2 ]
+then echo "User $user2 exists PASS"
+else
+  echo "That user does not exist"
+  echo "Installation aborted"
+  exit
+fi
+
+#Set up the alert file
+echo "alert(){
+  cd ~$user2/.mult/
+  cat .messagealert
+}
+alert" > ~/.alert
+
+#cleanup file setup
+echo "cd ~$user2/.mult/
+rm .talk.txt
+touch .talk.txt
+chmod 666 .talk.txt" > ./.mult/cleanup
+
+#receive file setup
+echo "cd ~$user2/.mult/
+cat .talk.txt" > ./.mult/receive
+
+#.bashrc setup
+if [ -f ~/.bashrc ]
+then
+  echo "rmnotify(){
+    bash .alert
+    cd ~$user2/.mult/
+    rm .messagealert
+    touch .messagealert
+    cd ~
+  }
+  rmnotify
+  mult(){
+    cd ~/.mult/
+    main
+    cd ~
+  }" >> ~/.bashrc
+else
+  echo "rmnotify(){
+    bash .alert
+    cd ~$user2/.mult/
+    rm .messagealert
+    touch .messagealert
+    cd ~
+  }
+  rmnotify
+  mult(){
+    cd ~/.mult/
+    main
+    cd ~
+  }" > ~/.bashrc
+fi
+
+#Copy needed files to the user's home directory
+cp -r .mult ~
+
+#cd to that home directory
+cd ~/.mult
+
+#Remove the old mult directory
+rm -rf $oldmultlocation
+
+#cat the README for installation instructions
+cat README.md

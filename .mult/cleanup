@@ -1,5 +1,0 @@
-#!/bin/bash
-
-cd ~user2/.mult/
-rm .talk.txt
-touch .talk.txt
