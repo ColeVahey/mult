@@ -36,7 +36,7 @@ cat .talk.txt" > ./.mult/receive
 if [ -f ~/.bashrc ]
 then
   echo "rmnotify(){
-    bash .alert
+    bash ~/.alert
     cd ~$user2/.mult/
     rm .messagealert
     touch .messagealert
