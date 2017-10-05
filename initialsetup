@@ -45,7 +45,7 @@ then
   rmnotify
   mult(){
     cd ~/.mult/
-    main
+    bash main
     cd ~
   }" >> ~/.bashrc
 else
@@ -64,14 +64,12 @@ else
   }" > ~/.bashrc
 fi
 
-#Copy needed files to the user's home directory
+#Copy needed files to the user's home directory and set read/write access to all
 cp -r .mult ~
+chmod 777 ~/.mult
 
 #cd to that home directory
 cd ~/.mult
 
 #Remove the old mult directory
 rm -rf $oldmultlocation
-
-#cat the README for installation instructions
-cat README.md

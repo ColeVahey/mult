@@ -5,22 +5,14 @@ Mult is an Instant Message program written in bash. It
 takes a bit of setup, but works fine.                                          
 
 ### Requirements.
-Mult runs on Mac(OSX) and Linux. A text editor like Vim or Nano will be needed for the install.
-You also need to be on a system with multiple users for this to have any
-use.
+Mult runs on Mac(OSX) and Linux. You also need to be on a 
+system with multiple users for Mult to have any use.
 
 ### Installing Mult.
-Mult is an Instant Message program for 2 users. For the sake of this
-installation, you will be `user1` and the person you chat with will 
-be called `user2`. First, open the /etc/group file as an admin. `vi
-/etc/group` Put `user1` and `user2` together. `user1:x:1000:user2` `user2:x:1001:user1`
-Next, go back to .mult and edit the `bashrcsetup` file `vi bashrcsetup`. Once you're 
-inside, edit the part that says `user2` to say their user name. 
-Next, edit the `receive` file to do the same thing. After that, 
-vi the 'cleanup' file to change the last user2 part to the user you 
-will be communicating with. Then, run the `setup.py` file. `bash setup` 
-Once this is done, go back to your home directory. `cd ~` and edit the `.alert` 
-file so you can change the final `user2` part. After this, source your
-.bashrc file, `source .bashrc`. Once these steps are done for both users, you're set! 
-Type 'mult' from the command line to access the chat.
-
+Mult is an Instant Message program for 2 users. The first
+step in the installation is sourcing the `initialsetup` file
+using `. initialsetup` in this directory. Once that is done,
+you need to source your .bashrc file, `source .bashrc` and
+you'll be ready to go! Type 'mult' from the command line to
+access the chat. Chat history can be accessed in your
+~/.mult/.history.txt file.
