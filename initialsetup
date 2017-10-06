@@ -18,7 +18,9 @@ fi
 #Set up the alert file
 echo "alert(){
   cd ~$user2/.mult/
-  cat .messagealert
+  if [ -f ~$user2/.mult/.messagealert ]
+  then cat .messagealert
+  fi
 }
 alert" > ~/.alert
 
