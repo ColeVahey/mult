@@ -1,6 +1,7 @@
 #!/bin/bash
 
 run(){
+  clear
   echo "Would you like to scan for new messages? or send a new message? (1), (2)"
 
   #Receive the user response
@@ -26,7 +27,6 @@ run(){
     fi
     echo \[Press enter to continue\]
     read
-    clear
   elif [ $scanorsend == '2' ]
   then echo "What would you like to say?"
     read -p ">> " newwrite
@@ -35,12 +35,9 @@ run(){
     echo -e "\033[0;31mNEW MESSAGE" > .messagealert
     echo Message sent! \[Press enter\]
     read
-    clear
   else
     echo "Invalid Response"
     sleep 1
-    clear
-    run
   fi
   run
 }

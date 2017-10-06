@@ -1,75 +1,82 @@
 #!/bin/bash
 
-#Save the location of the installer to be deleted
+# Save the location of the installer to be deleted
 oldmultlocation=$PWD
 
-#Receive the second user on the system
+# Receive the second user on the system
 echo "Who is the second user in your IM system?"
 read -p ">> " user2
 
 if [ -d /Users/$user2 ]
-then echo "User $user2 exists PASS"
+then echo "User $user2 exists"
 else
   echo "That user does not exist"
   echo "Installation aborted"
   exit
 fi
 
-#Set up the alert file
+# Set up the alert file
 echo "alert(){
   cd ~$user2/.mult/
   if [ -f ~$user2/.mult/.messagealert ]
-  then cat .messagealert
+    then cat .messagealert
   fi
 }
 alert" > ~/.alert
 
-#cleanup file setup
+# cleanup file setup
 echo "cd ~$user2/.mult/
-rm .talk.txt
+rm -f .talk.txt
 touch .talk.txt
 chmod 666 .talk.txt" > ./.mult/cleanup
 
-#receive file setup
+# receive file setup
 echo "cd ~$user2/.mult/
 cat .talk.txt" > ./.mult/receive
 
-#.bashrc setup
+# .bashrc setup
 if [ -f ~/.bashrc ]
 then
   echo "rmnotify(){
-    bash ~/.alert
-    cd ~$user2/.mult/
-    echo \"\" > .messagealert
-    cd ~
-  }
-  rmnotify
+  bash ~/.alert
+  cd ~$user2/.mult/
+  if [ -f .messagealert ]
+    then rm -f .messagealert
+  fi
+  cd ~
+}
+rmnotify
 mult(){
-    cd ~/.mult/
-    bash main
-    cd ~
+  cd ~/.mult/
+  bash main
+  cd ~
 }" >> ~/.bashrc
 else
   echo "rmnotify(){
-    bash ~/.alert
-    cd ~$user2/.mult/
-    echo \"\" > .messagealert
-    cd ~
-  }
-  rmnotify
+  bash ~/.alert
+  cd ~$user2/.mult/
+  if [ -f .messagealert ]
+    then rm -f .messagealert
+  fi
+  cd ~
+}
+rmnotify
 mult(){
-    cd ~/.mult/
-    bash main
-    cd ~
+  cd ~/.mult/
+  bash main
+  cd ~
 }" > ~/.bashrc
 fi
 
-#Copy needed files to the user's home directory and set read/write access to all
+# Copy needed files to the user's home directory and set read/write access to all
 cp -r .mult ~
 chmod 777 ~/.mult
 
-#cd to that home directory
-cd ~/.mult
+# Go home to finish the installation
+cd ~
 
-#Remove the old mult directory
+# Remove the old mult directory
 rm -rf $oldmultlocation
+
+# Source their bashrc file for them
+. .bashrc
