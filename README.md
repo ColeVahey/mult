@@ -9,11 +9,9 @@ Mult runs on Mac(OSX) and Linux. You also need to be on a
 system with multiple users for Mult to have any use.
 
 ### Installing Mult.
-Mult is an Instant Message program for 2 users. The first
-step in the installation is sourcing the `initialsetup` file
-using `. initialsetup` in this directory. Once both users
-have run this initialsetup file, you will both need to
-source your .bashrc file, `source .bashrc` and you'll be
-ready to go! Type 'mult' from the command line to access the
-chat. Chat history can be accessed in your
-`~/.mult/.history.txt` file.
+Mult is an Instant Message program for 2 users. To complete
+the installation, both users must source the `setup` file
+using `. setup`. Once this is complete, you'll be ready to
+go! Type 'mult' from the command line to access the chat.
+Chat history can be accessed in your `~/.mult/.history.txt`
+file.
