@@ -16,13 +16,10 @@ else
 fi
 
 # Set up the alert file
-echo "alert(){
-  cd ~$user2/.mult/
-  if [ -f ~$user2/.mult/.messagealert ]
-    then cat .messagealert
-  fi
-}
-alert" > ~/.alert
+echo "cd ~$user2/.mult/
+if [ -f ~$user2/.mult/.messagealert ]
+  then cat .messagealert
+fi" > ./.mult/.alert
 
 # cleanup file setup
 echo "cd ~$user2/.mult/
@@ -38,7 +35,7 @@ cat .talk.txt" > ./.mult/receive
 if [ -f ~/.bashrc ]
 then
   echo "rmnotify(){
-  bash ~/.alert
+  bash ~/.mult/.alert
   cd ~$user2/.mult/
   if [ -f .messagealert ]
     then rm -f .messagealert
@@ -53,7 +50,7 @@ mult(){
 }" >> ~/.bashrc
 else
   echo "rmnotify(){
-  bash ~/.alert
+  bash ~/.mult/.alert
   cd ~$user2/.mult/
   if [ -f .messagealert ]
     then rm -f .messagealert
@@ -78,5 +75,5 @@ cd ~
 # Remove the old mult directory
 rm -rf $oldmultlocation
 
-# Source their bashrc file for them
+# Source their bashrc for them
 . .bashrc
