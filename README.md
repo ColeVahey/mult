@@ -1,8 +1,7 @@
 ![Mult Logo](docs/multlogo.png "Mult")
   
 # Mult
-Mult is an Instant Message program written in bash. It
-takes a bit of setup, but works fine.                                          
+Mult is an Instant Message program written in bash.
 
 ### Requirements.
 Mult runs on Mac(OSX) and Linux. You also need to be on a 
