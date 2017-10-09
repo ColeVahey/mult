@@ -7,7 +7,7 @@ oldmultlocation=$PWD
 echo "Who is the second user in your IM system?"
 read -p ">> " user2
 
-if [ -d /Users/$user2 ]
+if [ -d ~/../$user2 ]
 then echo "User $user2 exists"
 else
   echo "That user does not exist"
