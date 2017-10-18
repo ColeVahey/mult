@@ -42,4 +42,11 @@ run(){
   run
 }
 
+cntrl-c(){
+  echo "Goodbye!"
+  cd ~
+  exit
+}
+
+trap cntrl-c SIGINT
 run  
