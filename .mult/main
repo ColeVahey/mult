@@ -12,13 +12,13 @@ run(){
   then 
 
     #Get the messages
-    bash receive
+    receive
 
     #ASK to delete
     echo "Would you like to delete their message? (Y/N)"
     read -p ">> " clean 
     if [ $clean == 'Y' -o $clean == 'y' ]
-    then bash cleanup
+    then cleanup
       echo "Message deleted!"
     elif [ $clean == 'N' -o $clean == 'n' ]
     then echo "Message(s) saved!"
@@ -49,4 +49,4 @@ cntrl-c(){
 }
 
 trap cntrl-c SIGINT
-run  
+
